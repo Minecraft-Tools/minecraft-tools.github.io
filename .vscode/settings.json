@@ -3,5 +3,6 @@
     "less.compile": {
         "main": "${workspaceFolder}/src/style/index.less",
         "out": "${workspaceFolder}/dist/style/"
-    }
+    },
+    "webProject.enabled": true
 }
