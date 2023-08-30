@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.root": "./dist/",
+    "less.compile": {
+        "main": "${workspaceFolder}/src/style/index.less",
+        "out": "${workspaceFolder}/dist/style/"
+    }
+}
