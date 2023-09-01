@@ -1,3 +1,6 @@
 {
-    "liveServer.settings.root": "./src/"
+    "liveServer.settings.root": "./dist/",
+    "less.compile": {
+        "out": "${workspaceFolder}/dist/"
+    }
 }
