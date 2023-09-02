@@ -41,15 +41,13 @@ jobs:
         run: deno lint
 
       - name: Run tests
-        run: |
-          mkdir reports
-          deno test -A --unstable --check --reload --doc --allow-none --reporter=junit --junit-path=./reports/report.xml
+        run: deno test -A --unstable --check --reload --doc --allow-none --reporter=junit --junit-path=./report.xml
       
       - name: Report tests (report.xml)
         uses: dorny/test-reporter@v1
         with:
           name: Deno Test Report
-          path: ./reports/report.xml
+          path: ./report.xml
           reporter: jest-junit
   
   deploy:
