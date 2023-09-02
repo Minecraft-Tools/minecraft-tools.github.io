@@ -4,9 +4,8 @@ on:
   push:
     branches: ["main"]
     paths:
-      - './src/**'
+      - 'src/**/**'
 
-    
   workflow_dispatch:
     inputs:
       page-root-directory:
