@@ -40,7 +40,14 @@ jobs:
         run: deno lint
 
       - name: Run tests
-        run: deno test -A --unstable --check --reload --doc --allow-none
+        run: deno test -A --unstable --check --reload --doc --allow-none --junit=./report.xml
+      
+      - name: Report tests (report.xml)
+        uses: dorny/test-reporter@v1
+        with:
+          name: Deno Test Report
+          path: ./report.xml
+          reporter: jest-junit
   
   deploy:
     name: Deploy Page
