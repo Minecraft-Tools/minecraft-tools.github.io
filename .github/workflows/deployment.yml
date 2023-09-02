@@ -15,6 +15,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  checks: write
 
 concurrency:
   group: "pages"
@@ -40,13 +41,15 @@ jobs:
         run: deno lint
 
       - name: Run tests
-        run: deno test -A --unstable --check --reload --doc --allow-none --reporter=junit --junit-path=./report.xml
+        run: |
+          mkdir reports
+          deno test -A --unstable --check --reload --doc --allow-none --reporter=junit --junit-path=./reports/report.xml
       
       - name: Report tests (report.xml)
         uses: dorny/test-reporter@v1
         with:
           name: Deno Test Report
-          path: ./report.xml
+          path: ./reports/report.xml
           reporter: jest-junit
   
   deploy:
