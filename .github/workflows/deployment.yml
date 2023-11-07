@@ -10,7 +10,7 @@ on:
     inputs:
       page-root-directory:
         description: Page root directory
-        default: './src/'
+        default: './dist/'
         type: string
 
 permissions:
@@ -56,7 +56,7 @@ jobs:
     name: Deploy Page
     needs: [test]
     env:
-      page-root-directory: './src'
+      page-root-directory: './dist/'
 
     runs-on: ubuntu-latest
     steps:
